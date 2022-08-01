@@ -4,7 +4,7 @@
 <template>
   <nav text-xl mt-6>
     <RouterLink class="icon-btn mx-2" to="/" title="首页">
-      <div i-carbon-campsite />
+      <div i-carbon-home />
     </RouterLink>
 
     <button class="icon-btn mx-2 !outline-none" @click="toggleDark()">
