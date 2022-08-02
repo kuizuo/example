@@ -10,6 +10,5 @@
   },
   "files.associations": {
     "*.css": "postcss"
-  },
-  "editor.formatOnSave": false
+  }
 }

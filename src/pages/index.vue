@@ -1,26 +1,18 @@
 <script setup lang="ts">
 interface Page {
+  id: string
   title: string
-  path: string
   preview?: string
 }
 
 const pages: Page[] = [
   {
-    title: 'demo1',
-    path: 'demo/1',
-  }, {
-    title: 'demo2',
-    path: 'demo/2',
-  }, {
-    title: 'demo3',
-    path: 'demo/3',
-  }, {
-    title: 'demo4',
-    path: 'demo/4',
-  }, {
-    title: 'demo5',
-    path: 'demo/5',
+    id: 'shape',
+    title: 'clip-path 裁剪图形',
+  },
+  {
+    id: 'demo',
+    title: 'demo',
   },
 ]
 </script>
@@ -40,7 +32,7 @@ const pages: Page[] = [
         hover="text-cyan/80"
       >
         <RouterLink
-          :to="item.path"
+          :to="{ path: `/example/${item.id}`, query: { title: item.title } }"
           class="m-0.5"
           block
           px-2 py-3
@@ -55,10 +47,6 @@ const pages: Page[] = [
     </ul>
   </div>
 </template>
-
-<style>
-background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-</style>
 
 <route lang="yaml">
 meta:
