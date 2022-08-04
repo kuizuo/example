@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PrismEditor } from 'vue-prism-editor'
 import 'vue-prism-editor/dist/prismeditor.min.css'
-import { highlight, languages } from 'prismjs/components/prism-core'
+import * as prism from 'prismjs'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-javascript'
@@ -18,10 +18,10 @@ const props = defineProps({
 const code = computed(() => props.source ?? '')
 
 const highlighter = () => {
-  return highlight(code.value, {
-    ...languages.markup,
-    ...languages.javascript,
-    ...languages.css,
+  return prism.highlight(code.value, {
+    ...prism.languages.markup,
+    ...prism.languages.javascript,
+    ...prism.languages.css,
   },
   'html')
 }
