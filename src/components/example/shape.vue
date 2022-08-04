@@ -33,7 +33,7 @@
   </div>
 </template>
 
-<style>
+<style lang="css">
 .rectangle {
   width: 100px;
   height: 100px;
