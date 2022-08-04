@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CollapseTransition: typeof import('./components/collapse-transition/index.vue')['default']
     Counter: typeof import('./components/Counter.vue')['default']
     Demo: typeof import('./components/example/demo.vue')['default']
     Example: typeof import('./components/Example.vue')['default']
@@ -15,5 +16,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Shape: typeof import('./components/example/shape.vue')['default']
+    SourceCode: typeof import('./components/SourceCode/index.vue')['default']
   }
 }
