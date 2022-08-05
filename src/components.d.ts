@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BackgroundGradient: typeof import('./components/example/background-gradient.vue')['default']
+    Button: typeof import('./components/example/button.vue')['default']
     CollapseTransition: typeof import('./components/CollapseTransition.vue')['default']
     Demo: typeof import('./components/example/demo.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']

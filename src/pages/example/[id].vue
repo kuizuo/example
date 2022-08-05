@@ -1,11 +1,23 @@
 <script lang="ts" setup>
 const route = useRoute()
+const router = useRouter()
+
 const id = route.params.id
 const title = route.query.title
 
-const example = computed(() => defineAsyncComponent(() => import(`../../components/example/${id}.vue`)))
+const example = computed(() => defineAsyncComponent(() =>
+  import(`../../components/example/${id}.vue`)
+    .catch((error) => {
+      console.error(error)
+      router.push('/404')
+    })),
+)
 const source = asyncComputed(() => import(`../../components/example/${id}.vue?raw`).then(({ default: source }) => source))
 
+// if (!example) {
+//   const router = useRouter()
+//   router.forward('/404')
+// }
 const { copy, copied } = useClipboard({ })
 
 async function copyCode() {
