@@ -7,9 +7,11 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BackgroundGradient: typeof import('./components/example/background-gradient.vue')['default']
     CollapseTransition: typeof import('./components/CollapseTransition.vue')['default']
     Demo: typeof import('./components/example/demo.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    Gradient: typeof import('./components/example/gradient.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Shape: typeof import('./components/example/shape.vue')['default']

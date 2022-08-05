@@ -11,6 +11,10 @@ const pages: Page[] = [
     title: 'clip-path 裁剪图形',
   },
   {
+    id: 'background-gradient',
+    title: '渐变背景过渡动画',
+  },
+  {
     id: 'demo',
     title: 'demo',
   },
