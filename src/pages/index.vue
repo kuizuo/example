@@ -10,9 +10,11 @@ const pages: Page[] = [
   { id: 'shape', title: 'clip-path 裁剪图形' },
   { id: 'gradient-background', title: '渐变背景过渡动画' },
   { id: 'gradient-shadow', title: '渐变阴影' },
-  { id: 'gradient-text', title: '渐变文字' },
+  { id: 'gradient-border', title: '渐变边框' },
+  { id: 'text', title: '文字特效' },
   { id: 'button', title: '按钮特效' },
-
+  { id: 'srcoll', title: '滚动条' },
+  { id: 'frosted-glass', title: '毛玻璃' },
 ]
 </script>
 

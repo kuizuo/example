@@ -7,15 +7,22 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BackgroundGradient: typeof import('./components/example/background-gradient.vue')['default']
+    Accordion: typeof import('./components/example/accordion.vue')['default']
     Button: typeof import('./components/example/button.vue')['default']
     CollapseTransition: typeof import('./components/CollapseTransition.vue')['default']
+    copy: typeof import('./components/example/gradient-shadow copy.vue')['default']
     Demo: typeof import('./components/example/demo.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
-    Gradient: typeof import('./components/example/gradient.vue')['default']
+    FrostedGlass: typeof import('./components/example/frosted-glass.vue')['default']
+    GradientBackground: typeof import('./components/example/gradient-background.vue')['default']
+    GradientBorder: typeof import('./components/example/gradient-border.vue')['default']
+    GradientShadow: typeof import('./components/example/gradient-shadow.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Shape: typeof import('./components/example/shape.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
+    Srcoll: typeof import('./components/example/srcoll.vue')['default']
+    Text: typeof import('./components/example/text.vue')['default']
+    Typewriter: typeof import('./components/example/typewriter.vue')['default']
   }
 }
