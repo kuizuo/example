@@ -8,8 +8,11 @@ interface Page {
 const pages: Page[] = [
   { id: 'demo', title: 'demo' },
   { id: 'shape', title: 'clip-path 裁剪图形' },
-  { id: 'background-gradient', title: '渐变背景过渡动画' },
+  { id: 'gradient-background', title: '渐变背景过渡动画' },
+  { id: 'gradient-shadow', title: '渐变阴影' },
+  { id: 'gradient-text', title: '渐变文字' },
   { id: 'button', title: '按钮特效' },
+
 ]
 </script>
 
