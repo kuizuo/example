@@ -9,9 +9,11 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Accordion: typeof import('./components/example/accordion.vue')['default']
     Button: typeof import('./components/example/button.vue')['default']
+    Click: typeof import('./components/example/click.vue')['default']
     CollapseTransition: typeof import('./components/CollapseTransition.vue')['default']
     copy: typeof import('./components/example/gradient-shadow copy.vue')['default']
     Demo: typeof import('./components/example/demo.vue')['default']
+    Example: typeof import('./components/example/index.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     FrostedGlass: typeof import('./components/example/frosted-glass.vue')['default']
     GradientBackground: typeof import('./components/example/gradient-background.vue')['default']
@@ -22,7 +24,9 @@ declare module '@vue/runtime-core' {
     Shape: typeof import('./components/example/shape.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
     Srcoll: typeof import('./components/example/srcoll.vue')['default']
+    Tabs: typeof import('./components/example/tabs.vue')['default']
     Text: typeof import('./components/example/text.vue')['default']
+    TextOverflow: typeof import('./components/example/text-overflow.vue')['default']
     Typewriter: typeof import('./components/example/typewriter.vue')['default']
   }
 }

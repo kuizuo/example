@@ -12,11 +12,13 @@ const pages: Page[] = [
   { id: 'gradient-shadow', title: '渐变阴影' },
   { id: 'gradient-border', title: '渐变边框' },
   { id: 'text', title: '文字特效' },
+  { id: 'text-overflow', title: '文本截断' },
   { id: 'button', title: '按钮特效' },
+  { id: 'click', title: '鼠标点击特效' },
   { id: 'srcoll', title: '滚动条' },
   { id: 'frosted-glass', title: '毛玻璃' },
   { id: 'typewriter', title: '打字机' },
-
+  { id: 'accordion', title: '手风琴' },
 ]
 </script>
 

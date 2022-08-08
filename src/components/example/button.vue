@@ -15,6 +15,14 @@
     <button class="btn1 border">
       边框
     </button>
+    <button class="flowage">
+      <svg width="100" height="50">
+        <rect class="shape" width="100" height="50" />
+        <div class="flowage-text">
+          流边
+        </div>
+      </svg>
+    </button>
     <button class="btn1 flow">
       流光按钮
     </button>
@@ -164,6 +172,46 @@ html.dark .border {
   box-shadow: 0 0 40px var(--second-background);
   /* 倒影效果 */
   /* -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3)); */
+}
+
+.flowage {
+  position: relative;
+  color: #262626;
+  background-color: #fff;
+}
+
+html.dark .flowage {
+  color: #fff;
+  background-color: #262626;
+}
+
+.shape {
+  /* 取消填充 */
+  fill:none;
+  /* 定义一条线 */
+  stroke: #009ffd;
+
+  stroke-width: 6;
+  /* 设置虚线：虚线长度 间距 */
+  stroke-dasharray: 40 400;
+  /* 虚线偏移量 */
+  stroke-dashoffset: 260;
+  transition: 1s ease;
+}
+
+.flowage-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 2px;
+}
+
+.flowage:hover .shape {
+  stroke: #06e6a0;
+  stroke-width: 3;
+  stroke-dasharray: 50 0;
+  stroke-dashoffset: 0;
 }
 
 .flow {
