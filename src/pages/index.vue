@@ -15,6 +15,8 @@ const pages: Page[] = [
   { id: 'button', title: '按钮特效' },
   { id: 'srcoll', title: '滚动条' },
   { id: 'frosted-glass', title: '毛玻璃' },
+  { id: 'typewriter', title: '打字机' },
+
 ]
 </script>
 
