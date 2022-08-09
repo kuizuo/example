@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Accordion: typeof import('./components/example/accordion.vue')['default']
+    Aircraft: typeof import('./components/example/aircraft.vue')['default']
     Button: typeof import('./components/example/button.vue')['default']
     Click: typeof import('./components/example/click.vue')['default']
     CollapseTransition: typeof import('./components/CollapseTransition.vue')['default']
@@ -21,6 +22,7 @@ declare module '@vue/runtime-core' {
     Shape: typeof import('./components/example/shape.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
     Srcoll: typeof import('./components/example/srcoll.vue')['default']
+    TagSurround: typeof import('./components/example/tag-surround.vue')['default']
     Text: typeof import('./components/example/text.vue')['default']
     TextOverflow: typeof import('./components/example/text-overflow.vue')['default']
     Typewriter: typeof import('./components/example/typewriter.vue')['default']

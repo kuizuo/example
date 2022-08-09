@@ -19,6 +19,9 @@ const pages: Page[] = [
   { id: 'frosted-glass', title: '毛玻璃' },
   { id: 'typewriter', title: '打字机' },
   { id: 'accordion', title: '手风琴' },
+  { id: 'aircraft', title: '指向鼠标的小飞机' },
+  { id: 'tag-surround', title: '标签3D环绕' },
+
 ]
 </script>
 
