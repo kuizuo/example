@@ -21,7 +21,7 @@ const pages: Page[] = [
   { id: 'accordion', title: '手风琴' },
   { id: 'aircraft', title: '指向鼠标的小飞机' },
   { id: 'tag-surround', title: '标签3D环绕' },
-
+  { id: 'tabs', title: 'tabs栏' },
 ]
 </script>
 

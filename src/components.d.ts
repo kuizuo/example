@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     Shape: typeof import('./components/example/shape.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
     Srcoll: typeof import('./components/example/srcoll.vue')['default']
+    Tabs: typeof import('./components/example/tabs.vue')['default']
     TagSurround: typeof import('./components/example/tag-surround.vue')['default']
     Text: typeof import('./components/example/text.vue')['default']
     TextOverflow: typeof import('./components/example/text-overflow.vue')['default']
