@@ -34,9 +34,7 @@ const tags = [
       --animation-delay: ${randomNum(-20, 0)}s;
     `"
     >
-      <div
-        class="tag" :style="`color: ${randomColor()};`"
-      >
+      <div class="tag" :style="{ color: randomColor() }">
         {{ item }}
       </div>
     </div>
@@ -67,12 +65,14 @@ const tags = [
   animation-delay: var(--animation-delay);
 }
 
-.box,.tag {
+.box,
+.tag {
   transform-style: preserve-3d;
 
   /* 文字竖行显示 */
   /* writing-mode: vertical-lr; */
 }
+
 .box {
   margin-top: var(--margin-top);
 }

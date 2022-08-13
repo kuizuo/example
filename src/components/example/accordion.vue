@@ -27,7 +27,7 @@ function setActive(index) {
   <ul flex>
     <li
       v-for="(item, i) in items" :key="i" class="accordion-item" :class="{ active: isActive === i }"
-      :style="`background-image: url(${item.url});`" @click="setActive(i)"
+      :style="{ 'background-image': `url(${item.url})` }" @click="setActive(i)"
     />
   </ul>
 </template>

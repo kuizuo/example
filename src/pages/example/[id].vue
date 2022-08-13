@@ -9,7 +9,7 @@ const example = computed(() => defineAsyncComponent(() =>
   import(`../../components/example/${id}.vue`)
     .catch((error) => {
       console.error(error)
-      router.push('/404')
+      // router.push('/404')
     })),
 )
 const source = asyncComputed(() => import(`../../components/example/${id}.vue?raw`).then(({ default: source }) => source))

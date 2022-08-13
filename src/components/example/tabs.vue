@@ -29,9 +29,10 @@ function setActive(i, ev: Event) {
   <div>
     <ul class="tabs">
       <div
-        class="tabs-items__underline" :style="`
-      width: ${underlineWidth}px;
-      transform: translateX(${underlineOffsetLeft}px);`"
+        class="tabs-items__underline" :style="{
+          width: `${underlineWidth}px`,
+          transform: `translateX(${underlineOffsetLeft}px)`,
+        }"
       />
       <li v-for="(item, i) in tabs" :key="i" class="tabs-item" @click="setActive(i, $event)">
         {{ item.title }}

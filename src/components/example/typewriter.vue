@@ -11,7 +11,7 @@ const { data } = useFetch('https://api.kuizuo.cn/api/one', {
 
 <template>
   <div class="typing-demo">
-    <p class="content" :style="`width: ${data?.length ?? 0}em`">
+    <p class="content" :style="{ width: `${data?.length ?? 0}em` }">
       {{ data }}
     </p>
   </div>
