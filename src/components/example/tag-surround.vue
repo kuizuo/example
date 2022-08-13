@@ -1,5 +1,5 @@
 <script lang='ts' setup>
-function randomNum(min, max) {
+function randomNum(min: number, max: number) {
   return (Math.random() * (max - min + 1) + min).toFixed(2)
 }
 
