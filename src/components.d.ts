@@ -27,6 +27,7 @@ declare module '@vue/runtime-core' {
     GradientBorder: typeof import('./components/example/gradient-border.vue')['default']
     GradientShadow: typeof import('./components/example/gradient-shadow.vue')['default']
     LoadingBounce: typeof import('./components/example/loading-bounce.vue')['default']
+    Message: typeof import('./components/example/message.vue')['default']
     Meter: typeof import('./components/example/meter.vue')['default']
     Music: typeof import('./components/example/music.vue')['default']
     NavigationBar: typeof import('./components/example/navigation-bar.vue')['default']

@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const route = useRoute()
-const router = useRouter()
 
 const id = route.params.id
 const title = route.query.title
@@ -9,7 +8,7 @@ const example = computed(() => defineAsyncComponent(() =>
   import(`../../components/example/${id}.vue`)
     .catch((error) => {
       console.error(error)
-      // router.push('/404')
+      return import('../../layouts/404.vue')
     })),
 )
 const source = asyncComputed(() => import(`../../components/example/${id}.vue?raw`).then(({ default: source }) => source))
@@ -36,7 +35,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </script>
 
 <template>
-  <div class="example border border-gray-3 rounded">
+  <div v-if="!isFullDisplay" class="example border border-gray-3 rounded">
     <div v-if="title" class="examle-title">
       <h2 class="text-base p-2">
         {{ title }}
@@ -81,5 +80,8 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
         </div>
       </div>
     </Transition>
+  </div>
+  <div v-else>
+    <component :is="example" v-if="reloadFlag" />
   </div>
 </template>
