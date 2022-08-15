@@ -24,6 +24,7 @@ const pages: Page[] = [
   { id: 'navigation-bar', title: '侧边导航栏' },
   { id: 'annular-progress', title: '环形进度栏' },
   { id: 'loading-bounce', title: '文字跳动加载页' },
+  { id: 'loading', title: '吃豆人加载动画' },
 ]
 </script>
 
