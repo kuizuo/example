@@ -225,3 +225,9 @@ html.dark .nav-menu-item.active {
   transform: skewX(-15deg);
 }
 </style>
+
+<route lang="yaml">
+name: 侧边导航栏
+meta:
+  layout: demo
+</route>

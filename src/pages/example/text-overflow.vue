@@ -1,5 +1,5 @@
-<script setup>
-const { data } = useFetch('https://api.kuizuo.cn/api/one', {
+<script lang="ts" setup>
+const { data } = await useFetch('https://api.kuizuo.cn/api/one', {
   onFetchError(ctx) {
     ctx.data = '这是一串特别长的文本文本文本文本文本文本文本文本文本文本'
     return ctx
@@ -25,3 +25,9 @@ const { data } = useFetch('https://api.kuizuo.cn/api/one', {
   text-overflow: ellipsis;
 }
 </style>
+
+<route lang="yaml">
+name: 文本省略
+meta:
+  layout: demo
+</route>

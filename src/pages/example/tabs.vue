@@ -55,6 +55,10 @@ function setActive(i, ev: Event) {
   border-bottom: 1px solid #eaeaea;
 }
 
+.dark .tabs {
+  border-bottom: 1px solid #444;
+}
+
 .tabs-item {
   position: relative;
   display: flex;
@@ -100,3 +104,9 @@ html.dark .tabs-item:hover {
   opacity: 1;
 }
 </style>
+
+<route lang="yaml">
+name: tabs栏
+meta:
+  layout: demo
+</route>

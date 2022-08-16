@@ -31,3 +31,8 @@ html.dark .gradient-shadow {
 }
 </style>
 
+<route lang="yaml">
+name: 渐变阴影
+meta:
+  layout: demo
+</route>

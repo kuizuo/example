@@ -71,3 +71,9 @@ html.dark .meter {
   border-radius: inherit;
 }
 </style>
+
+<route lang="yaml">
+name: 环形进度栏
+meta:
+  layout: demo
+</route>

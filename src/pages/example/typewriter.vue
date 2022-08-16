@@ -1,11 +1,9 @@
-<script setup>
-const { data } = useFetch('https://api.kuizuo.cn/api/one', {
+<script lang="ts" setup>
+const { data } = await useFetch('https://api.kuizuo.cn/api/one', {
   onFetchError(ctx) {
     ctx.data = '这是打字机效果'
-
     return ctx
   },
-
 })
 </script>
 
@@ -46,3 +44,9 @@ const { data } = useFetch('https://api.kuizuo.cn/api/one', {
   }
 }
 </style>
+
+<route lang="yaml">
+name: 打字机效果
+meta:
+  layout: demo
+</route>

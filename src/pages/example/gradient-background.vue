@@ -27,3 +27,9 @@
   }
 }
 </style>
+
+<route lang="yaml">
+name: 渐变背景
+meta:
+  layout: demo
+</route>

@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 const items = [
   {
     url: 'https://picsum.photos/id/10/800/400',
@@ -51,3 +51,9 @@ function setActive(index) {
   width: 1000px;
 }
 </style>
+
+<route lang="yaml">
+name: 手风琴背景
+meta:
+  layout: demo
+</route>

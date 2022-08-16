@@ -43,3 +43,9 @@ onMounted(() => {
   }
 }
 </style>
+
+<route lang="yaml">
+name: 文字跳动加载动画
+meta:
+  layout: demo
+</route>

@@ -1,8 +1,11 @@
 <script lang='ts' setup>
-const plane = $ref<HTMLElement>()
+const plane = $ref<HTMLElement>(null)
+let timer: any = 0
+
 onMounted(() => {
   let deg = 0; let ex = 0; let ey = 0; let vx = 0; let vy = 0; let count = 0
-  window.addEventListener('mousemove', (e) => {
+
+  function setPlanePosition(e: { x: number; y: number }) {
     ex = e.x - plane.offsetLeft - plane.clientWidth / 2
     ey = e.y - plane.offsetTop - plane.clientHeight / 2
     deg = 360 * Math.atan(ey / ex) / (2 * Math.PI) + 90
@@ -10,7 +13,9 @@ onMounted(() => {
       deg += 180
 
     count = 0
-  })
+  }
+  window.onmousemove = setPlanePosition
+
   function draw() {
     plane.style.transform = `rotate(${deg}deg)`
     if (count < 100) {
@@ -21,7 +26,12 @@ onMounted(() => {
     plane.style.top = `${vy}px`
     count++
   }
-  setInterval(draw, 1)
+  timer = setInterval(draw, 1)
+})
+
+onBeforeUnmount(() => {
+  window.onmousemove = null
+  clearInterval(timer)
 })
 </script>
 
@@ -32,10 +42,16 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="css">
+<style scoped>
 #plane {
   position: fixed;
   color: #12affa;
   font-size: 24px;
 }
 </style>
+
+<route lang="yaml">
+name: 指向鼠标的小飞机
+meta:
+  layout: demo
+</route>

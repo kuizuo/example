@@ -1,17 +1,18 @@
 <script lang="ts" setup>
-const route = useRoute()
+const { title, sourcePath, demo } = defineProps<{
+  title: string
+  sourcePath: string
+  demo: any
+}>()
 
-const id = route.params.id
-const title = route.query.title
+watchEffect(() => {
+  useTitle(title as string)
+})
 
-const Example = defineAsyncComponent(() => import(`../../components/example/${id}.vue`)
-  .catch((error) => {
-    console.error(error)
-    return import('../../layouts/404.vue')
-  }),
-)
+const id = sourcePath.split('/').pop()
 
-const source = asyncComputed(() => import(`../../components/example/${id}.vue?raw`).then(({ default: source }) => source))
+// 动态导入的变量仅代表一层深的文件名 参见 https://cn.vitejs.dev/guide/features.html#dynamic-import
+const source = asyncComputed(() => import(`../pages/example/${id}.vue?raw`).then(({ default: source }) => source ?? ''))
 
 let reloadFlag = $ref(true)
 async function reload() {
@@ -28,7 +29,7 @@ async function copyCode() {
 }
 
 function goEditPage() {
-  window.open(`https://github.com/kuizuo/example/blob/main/src/components/example/${id}.vue`)
+  window.open(`https://github.com/kuizuo/example/blob/main/src/pages/example/${id}.vue`)
 }
 
 const [sourceVisible, toggleSourceVisible] = useToggle(false)
@@ -37,17 +38,19 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 <template>
   <Suspense>
     <template #default>
-      <div v-if="!isFullDisplay" class="example border border-gray-3 rounded">
-        <div v-if="title" class="examle-title">
+      <div v-if="!isFullDisplay" class="border border-gray-3 dark:border-gray-6 rounded shadow-md shadow-gray-3/30 dark:shadow-gray-7/50">
+        <div v-if="title">
           <h2 class="text-base p-2">
             {{ title }}
           </h2>
-          <div class="border-b border-gray-3" />
+          <div class="border-b border-gray-3 dark:border-gray-6" />
         </div>
         <div class="example-showcase p-6">
-          <Example v-if="reloadFlag" />
+          <Transition name="page-fade">
+            <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
+          </Transition>
         </div>
-        <div class="border-b border-gray-3" />
+        <div class="border-b border-gray-3 dark:border-gray-6" />
         <div class="example-option h-8 p-4 flex justify-end items-center gap-4">
           <i i-mdi-reload icon-btn @click="reload()" />
           <!-- <i i-carbon-chemistry icon-btn /> -->
@@ -66,7 +69,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
             v-show="sourceVisible" bg-white dark:bg-black sticky left-0 right-0 bottom-0 z-10
             @click="toggleSourceVisible(false)"
           >
-            <div class="border-t border-gray-3" />
+            <div class="border-t border-gray-3 dark:border-gray-6" />
             <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
               <i><svg
                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -84,7 +87,9 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
         </Transition>
       </div>
       <div v-else>
-        <Example v-if="reloadFlag" />
+        <Transition name="page-fade">
+          <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
+        </Transition>
       </div>
     </template>
     <template #fallback>
@@ -92,3 +97,15 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
     </template>
   </Suspense>
 </template>
+
+<style>
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+  opacity: 0;
+}
+</style>

@@ -27,3 +27,39 @@ html.dark {
   width: 100%;
   height: 2px;
 }
+
+
+*, :before, :after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+*::-webkit-scrollbar {
+    background-color: transparent;
+    height: 12px;
+    width: 12px;
+}
+
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+
+*::-webkit-scrollbar-thumb {
+    transition: background .2s ease-in-out;
+    border: 3px solid transparent;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    --tw-bg-opacity: 1;
+    background-color: rgba(229,231,235,1);
+    border-radius: 9999px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+    --tw-bg-opacity: 1;
+    background-color: rgba(50,50,50,1);
+}

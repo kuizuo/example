@@ -26,3 +26,8 @@ html.dark .gradient-border {
 }
 </style>
 
+<route lang="yaml">
+name: 渐变边框
+meta:
+  layout: demo
+</route>

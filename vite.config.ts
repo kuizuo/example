@@ -29,6 +29,11 @@ export default defineConfig({
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       extensions: ['vue', 'md'],
+      onRoutesGenerated(routes) {
+        return routes.map(r => (
+          { ...r, source: `${r.component}?raw` }
+        ))
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts

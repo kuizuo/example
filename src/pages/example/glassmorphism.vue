@@ -21,11 +21,17 @@
   width: 100%;
   height: calc(100vh - 260px);
   background: url('/background.png') no-repeat center;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
 
 html.dark .background {
   background: url('/background-dark.png') no-repeat center;
-  background-size:100% 100%;
+  background-size: 100% 100%;
 }
 </style>
+
+<route lang="yaml">
+name: 毛玻璃卡片
+meta:
+  layout: demo
+</route>

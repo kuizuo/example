@@ -89,3 +89,9 @@ const tags = [
   }
 }
 </style>
+
+<route lang="yaml">
+name: 标签3D环绕
+meta:
+  layout: demo
+</route>

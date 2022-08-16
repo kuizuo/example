@@ -36,6 +36,8 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     sCube: typeof import('./components/example/3D-Rubik's-cube.vue')['default']
     Shape: typeof import('./components/example/shape.vue')['default']
+    Showcase: typeof import('./components/Showcase.vue')['default']
+    Sidebar: typeof import('./components/Sidebar.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
     Srcoll: typeof import('./components/example/srcoll.vue')['default']
     Tabs: typeof import('./components/example/tabs.vue')['default']

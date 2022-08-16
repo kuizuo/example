@@ -251,3 +251,9 @@ html.dark .flow {
   }
 }
 </style>
+
+<route lang="yaml">
+name: 按钮效果
+meta:
+  layout: demo
+</route>

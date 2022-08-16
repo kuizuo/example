@@ -59,3 +59,9 @@
   background-color: rgba(180, 160, 120, 0.1);
 }
 </style>
+
+<route lang="yaml">
+name: 滚动条
+meta:
+  layout: demo
+</route>

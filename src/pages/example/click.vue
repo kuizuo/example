@@ -253,3 +253,9 @@ function createWord(event: MouseEvent) {
     </div>
   </div>
 </template>
+
+<route lang="yaml">
+name: 鼠标点击特效
+meta:
+  layout: demo
+</route>
