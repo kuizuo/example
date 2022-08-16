@@ -36,7 +36,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </script>
 
 <template>
-  <div class="close-handler" :class="{ close: isHiddenSidebar }" @click="toggleHiddenSidebar()" />
+  <CloseHandler />
   <Suspense>
     <template #default>
       <div class="content-wrapper">
@@ -77,16 +77,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
               >
                 <div class="border-t border-gray-3 dark:border-gray-6" />
                 <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
-                  <i><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true" role="img" class="iconify iconify--ant-design" width="24" height="24"
-                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
-                    />
-                  </svg></i>
+                  <HiddenSourceSvg />
                   <span>隐藏源代码</span>
                 </div>
               </div>
@@ -107,65 +98,6 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </template>
 
 <style>
-.example {
-  /* width: calc(100% - 2rem); */
-}
-
-.close-handler {
-  width: 8px;
-  height: 50px;
-  position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.close-handler::before,
-.close-handler::after {
-  content: "";
-  background-color: #ebebed;
-  position: absolute;
-  left: 8px;
-  width: 100%;
-  height: 50%;
-  border-radius: 8px 8px 0 0;
-  transition: 0.2s;
-}
-
-.dark .close-handler::before,
-.dark  .close-handler::after {
-  background-color: rgba(50,50,50,1);
-}
-
-.close-handler::after {
-  bottom: 0;
-  border-radius: 0 0 8px 8px;
-}
-
-main:hover .close-handler {
-  opacity: 1;
-}
-
-.close-handler:hover::before {
-  transform: skewX(-15deg);
-}
-
-.close-handler:hover::after {
-  transform: skewX(15deg);
-}
-
-.close-handler.close:hover::before {
-  transform: skewX(15deg);
-}
-
-.close-handler.close:hover::after {
-  transform: skewX(-15deg);
-}
-
 .page-fade-enter-active,
 .page-fade-leave-active {
   transition: opacity 0.3s ease;
