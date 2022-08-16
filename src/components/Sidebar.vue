@@ -1,6 +1,13 @@
 <script lang="ts" setup>
 import pages from '~pages'
 const examples = pages.filter(page => page?.meta?.layout === 'demo')
+
+useResizeObserver(document.body, (entries) => {
+  const entry = entries[0]
+  const { width } = entry.contentRect
+  const isMobile = width < 768
+  isHiddenSidebar.value = isMobile
+})
 </script>
 
 <template>

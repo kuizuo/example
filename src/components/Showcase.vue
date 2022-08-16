@@ -39,55 +39,56 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
   <CloseHandler />
   <Suspense>
     <template #default>
-      <div class="content-wrapper">
-        <div class="example px-5 py-5">
-          <div
-            v-if="!isFullDisplay"
-            class="border border-gray-3 dark:border-gray-6 rounded shadow-md shadow-gray-3/30 dark:shadow-gray-7/50"
-          >
-            <div v-if="title">
-              <h2 class="text-base p-2">
-                {{ title }}
-              </h2>
-              <div class="border-b border-gray-3 dark:border-gray-6" />
-            </div>
-            <div class="example-showcase p-6">
-              <Transition name="page-fade">
-                <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
-              </Transition>
-            </div>
+      <div class="example px-5 py-5 w-full">
+        <div
+          v-if="!isFullDisplay"
+          class="border border-gray-3 dark:border-gray-6 rounded shadow-md shadow-gray-3/30 dark:shadow-gray-7/50"
+        >
+          <div v-if="title">
+            <h2 class="text-base p-2">
+              {{ title }}
+            </h2>
             <div class="border-b border-gray-3 dark:border-gray-6" />
-            <div class="example-option h-8 p-4 flex justify-end items-center gap-4">
-              <i i-mdi-reload icon-btn @click="reload()" />
-              <!-- <i i-carbon-chemistry icon-btn /> -->
-              <i i-ri-github-line icon-btn @click="goEditPage()" />
-              <i v-if="!copied" i-carbon-copy icon-btn @click="copyCode()" />
-              <i v-if="copied" i-carbon-checkbox-checked icon-btn />
-              <i i-carbon-code icon-btn @click="toggleSourceVisible()" />
-            </div>
-
-            <CollapseTransition>
-              <SourceCode v-show="sourceVisible" :source="source" />
-            </CollapseTransition>
-
-            <Transition>
-              <div
-                v-show="sourceVisible" bg-white dark:bg-black sticky left-0 right-0 bottom-0 z-10
-                @click="toggleSourceVisible(false)"
-              >
-                <div class="border-t border-gray-3 dark:border-gray-6" />
-                <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
-                  <HiddenSourceSvg />
-                  <span>隐藏源代码</span>
-                </div>
-              </div>
-            </Transition>
           </div>
-          <div v-else>
+          <div
+            class="example-showcase overflow-y-auto p-6"
+            :style="{ 'max-height': 'calc(100vh - 160px)' }"
+          >
             <Transition name="page-fade">
               <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
             </Transition>
           </div>
+          <div class="border-b border-gray-3 dark:border-gray-6" />
+          <div class="example-option h-8 p-4 flex justify-end items-center gap-4">
+            <i i-mdi-reload icon-btn @click="reload()" />
+            <!-- <i i-carbon-chemistry icon-btn /> -->
+            <i i-ri-github-line icon-btn @click="goEditPage()" />
+            <i v-if="!copied" i-carbon-copy icon-btn @click="copyCode()" />
+            <i v-if="copied" i-carbon-checkbox-checked icon-btn />
+            <i i-carbon-code icon-btn @click="toggleSourceVisible()" />
+          </div>
+
+          <CollapseTransition>
+            <SourceCode v-show="sourceVisible" :source="source" />
+          </CollapseTransition>
+
+          <Transition>
+            <div
+              v-show="sourceVisible" bg-white dark:bg-black sticky left-0 right-0 bottom-0 z-10
+              @click="toggleSourceVisible(false)"
+            >
+              <div class="border-t border-gray-3 dark:border-gray-6" />
+              <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
+                <HiddenSourceSvg />
+                <span>隐藏源代码</span>
+              </div>
+            </div>
+          </Transition>
+        </div>
+        <div v-else>
+          <Transition name="page-fade">
+            <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
+          </Transition>
         </div>
       </div>
     </template>
@@ -96,3 +97,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
     </template>
   </Suspense>
 </template>
+
+<style>
+
+</style>

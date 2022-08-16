@@ -1,5 +1,5 @@
 <template>
-  <div flex gap-6>
+  <div flex flex-wrap gap-6>
     <button class="btn1 shine">
       闪光
     </button>

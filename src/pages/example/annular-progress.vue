@@ -25,7 +25,7 @@ const progress = [
 </script>
 
 <template>
-  <div class="flex">
+  <div flex flex-wrap>
     <div
       v-for="(item, i) in progress" :key="i" class="meter" :style="
         {

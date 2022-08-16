@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <nav text-xl mt-6>
+  <nav text-xl>
     <RouterLink class="icon-btn mx-2" to="/" title="首页">
       <div i-ri-home-3-line />
     </RouterLink>
