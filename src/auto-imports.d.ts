@@ -41,6 +41,7 @@ declare global {
   const isDark: typeof import('./composables/dark')['isDark']
   const isDefined: typeof import('@vueuse/core')['isDefined']
   const isFullDisplay: typeof import('./composables/display')['isFullDisplay']
+  const isHiddenSidebar: typeof import('./composables/hiddenSidebar')['isHiddenSidebar']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
@@ -98,6 +99,7 @@ declare global {
   const toRefs: typeof import('vue')['toRefs']
   const toggleDark: typeof import('./composables/dark')['toggleDark']
   const toggleFullDisplay: typeof import('./composables/display')['toggleFullDisplay']
+  const toggleHiddenSidebar: typeof import('./composables/hiddenSidebar')['toggleHiddenSidebar']
   const triggerRef: typeof import('vue')['triggerRef']
   const tryOnBeforeMount: typeof import('@vueuse/core')['tryOnBeforeMount']
   const tryOnBeforeUnmount: typeof import('@vueuse/core')['tryOnBeforeUnmount']
@@ -312,6 +314,7 @@ declare module '@vue/runtime-core' {
     readonly isDark: UnwrapRef<typeof import('./composables/dark')['isDark']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
     readonly isFullDisplay: UnwrapRef<typeof import('./composables/display')['isFullDisplay']>
+    readonly isHiddenSidebar: UnwrapRef<typeof import('./composables/hiddenSidebar')['isHiddenSidebar']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
@@ -369,6 +372,7 @@ declare module '@vue/runtime-core' {
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
     readonly toggleDark: UnwrapRef<typeof import('./composables/dark')['toggleDark']>
     readonly toggleFullDisplay: UnwrapRef<typeof import('./composables/display')['toggleFullDisplay']>
+    readonly toggleHiddenSidebar: UnwrapRef<typeof import('./composables/hiddenSidebar')['toggleHiddenSidebar']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryOnBeforeMount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeMount']>
     readonly tryOnBeforeUnmount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeUnmount']>

@@ -10,14 +10,17 @@ const customProgressColor = (percentage: number) => {
     return '#5cb87a'
 }
 
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 const progress = [
-  10,
   20,
   40,
-  50,
   60,
   80,
   100,
+  randomNumber(0, 100),
 ]
 </script>
 

@@ -24,8 +24,6 @@ const bars = [
 ]
 const navIndex = $ref(0)
 const isClose = $ref(false)
-
-const closeBtn = ref<HTMLElement>()
 </script>
 
 <template>
@@ -62,7 +60,7 @@ const closeBtn = ref<HTMLElement>()
         test
       </div>
 
-      <div ref="closeBtn" class="handler" :class="{ close: isClose }" @click="isClose = !isClose" />
+      <div class="handler" :class="{ close: isClose }" @click="isClose = !isClose" />
     </div>
   </div>
 </template>
@@ -70,7 +68,7 @@ const closeBtn = ref<HTMLElement>()
 <style scoped>
 .demo {
   display: flex;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 200px);
 }
 
 .siderbar {

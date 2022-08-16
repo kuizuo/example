@@ -48,7 +48,7 @@ function setActive(index) {
 }
 
 .active {
-  width: 1000px;
+  width: 800px;
 }
 </style>
 

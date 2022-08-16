@@ -36,60 +36,68 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </script>
 
 <template>
+  <div class="close-handler" :class="{ close: isHiddenSidebar }" @click="toggleHiddenSidebar()" />
   <Suspense>
     <template #default>
-      <div v-if="!isFullDisplay" class="border border-gray-3 dark:border-gray-6 rounded shadow-md shadow-gray-3/30 dark:shadow-gray-7/50">
-        <div v-if="title">
-          <h2 class="text-base p-2">
-            {{ title }}
-          </h2>
-          <div class="border-b border-gray-3 dark:border-gray-6" />
-        </div>
-        <div class="example-showcase p-6">
-          <Transition name="page-fade">
-            <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
-          </Transition>
-        </div>
-        <div class="border-b border-gray-3 dark:border-gray-6" />
-        <div class="example-option h-8 p-4 flex justify-end items-center gap-4">
-          <i i-mdi-reload icon-btn @click="reload()" />
-          <!-- <i i-carbon-chemistry icon-btn /> -->
-          <i i-ri-github-line icon-btn @click="goEditPage()" />
-          <i v-if="!copied" i-carbon-copy icon-btn @click="copyCode()" />
-          <i v-if="copied" i-carbon-checkbox-checked icon-btn />
-          <i i-carbon-code icon-btn @click="toggleSourceVisible()" />
-        </div>
-
-        <CollapseTransition>
-          <SourceCode v-show="sourceVisible" :source="source" />
-        </CollapseTransition>
-
-        <Transition>
+      <div class="content-wrapper">
+        <div class="example px-5 py-5">
           <div
-            v-show="sourceVisible" bg-white dark:bg-black sticky left-0 right-0 bottom-0 z-10
-            @click="toggleSourceVisible(false)"
+            v-if="!isFullDisplay"
+            class="border border-gray-3 dark:border-gray-6 rounded shadow-md shadow-gray-3/30 dark:shadow-gray-7/50"
           >
-            <div class="border-t border-gray-3 dark:border-gray-6" />
-            <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
-              <i><svg
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                role="img" class="iconify iconify--ant-design" width="24" height="24"
-                preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"
-              >
-                <path
-                  fill="currentColor"
-                  d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
-                />
-              </svg></i>
-              <span>隐藏源代码</span>
+            <div v-if="title">
+              <h2 class="text-base p-2">
+                {{ title }}
+              </h2>
+              <div class="border-b border-gray-3 dark:border-gray-6" />
             </div>
+            <div class="example-showcase p-6">
+              <Transition name="page-fade">
+                <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
+              </Transition>
+            </div>
+            <div class="border-b border-gray-3 dark:border-gray-6" />
+            <div class="example-option h-8 p-4 flex justify-end items-center gap-4">
+              <i i-mdi-reload icon-btn @click="reload()" />
+              <!-- <i i-carbon-chemistry icon-btn /> -->
+              <i i-ri-github-line icon-btn @click="goEditPage()" />
+              <i v-if="!copied" i-carbon-copy icon-btn @click="copyCode()" />
+              <i v-if="copied" i-carbon-checkbox-checked icon-btn />
+              <i i-carbon-code icon-btn @click="toggleSourceVisible()" />
+            </div>
+
+            <CollapseTransition>
+              <SourceCode v-show="sourceVisible" :source="source" />
+            </CollapseTransition>
+
+            <Transition>
+              <div
+                v-show="sourceVisible" bg-white dark:bg-black sticky left-0 right-0 bottom-0 z-10
+                @click="toggleSourceVisible(false)"
+              >
+                <div class="border-t border-gray-3 dark:border-gray-6" />
+                <div inline-flex justify-center items-center icon-btn text-sm my-2 w-full>
+                  <i><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    aria-hidden="true" role="img" class="iconify iconify--ant-design" width="24" height="24"
+                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M858.9 689L530.5 308.2c-9.4-10.9-27.5-10.9-37 0L165.1 689c-12.2 14.2-1.2 35 18.5 35h656.8c19.7 0 30.7-20.8 18.5-35z"
+                    />
+                  </svg></i>
+                  <span>隐藏源代码</span>
+                </div>
+              </div>
+            </Transition>
           </div>
-        </Transition>
-      </div>
-      <div v-else>
-        <Transition name="page-fade">
-          <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
-        </Transition>
+          <div v-else>
+            <Transition name="page-fade">
+              <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
+            </Transition>
+          </div>
+        </div>
       </div>
     </template>
     <template #fallback>
@@ -99,6 +107,65 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </template>
 
 <style>
+.example {
+  /* width: calc(100% - 2rem); */
+}
+
+.close-handler {
+  width: 8px;
+  height: 50px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.close-handler::before,
+.close-handler::after {
+  content: "";
+  background-color: #ebebed;
+  position: absolute;
+  left: 8px;
+  width: 100%;
+  height: 50%;
+  border-radius: 8px 8px 0 0;
+  transition: 0.2s;
+}
+
+.dark .close-handler::before,
+.dark  .close-handler::after {
+  background-color: rgba(50,50,50,1);
+}
+
+.close-handler::after {
+  bottom: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+main:hover .close-handler {
+  opacity: 1;
+}
+
+.close-handler:hover::before {
+  transform: skewX(-15deg);
+}
+
+.close-handler:hover::after {
+  transform: skewX(15deg);
+}
+
+.close-handler.close:hover::before {
+  transform: skewX(15deg);
+}
+
+.close-handler.close:hover::after {
+  transform: skewX(-15deg);
+}
+
 .page-fade-enter-active,
 .page-fade-leave-active {
   transition: opacity 0.3s ease;
@@ -109,3 +176,4 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
   opacity: 0;
 }
 </style>
+
