@@ -10,6 +10,6 @@
 
 - 基于 [vitesse](https://github.com/antfu/vitesse) 模板，使用Vue3 + Vite + UnoCSS
 
-- 在 [src/pages/example](https://github.com/kuizuo/example/tree/main/src/pages/example) 下的组件通过 [SFC](https://cn.vuejs.org/api/sfc-spec.html#sfc-syntax-specification) 使用 [`<route>` 标签块](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) 定义组件信息，无需额外定义数据。
+- 在 [src/pages/example](https://github.com/kuizuo/example/tree/main/src/pages/example) 下的组件通过 [SFC](https://cn.vuejs.org/api/sfc-spec.html#sfc-syntax-specification) 使用 [\<route\> 标签块](https://github.com/hannoeru/vite-plugin-pages#sfc-custom-block-for-route-data) 定义组件信息，无需额外定义数据。
 
 - 两种演示组件方式，方便预览的同时，还可以查看或复制组件相关代码。
