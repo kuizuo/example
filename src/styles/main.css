@@ -63,3 +63,13 @@ html.dark {
     --tw-bg-opacity: 1;
     background-color: rgba(50,50,50,1);
 }
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+  opacity: 0;
+}

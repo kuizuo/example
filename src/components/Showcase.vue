@@ -96,16 +96,3 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
     </template>
   </Suspense>
 </template>
-
-<style>
-.page-fade-enter-active,
-.page-fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.page-fade-enter-from,
-.page-fade-leave-to {
-  opacity: 0;
-}
-</style>
-
