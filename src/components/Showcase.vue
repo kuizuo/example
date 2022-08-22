@@ -9,7 +9,7 @@ watchEffect(() => {
   useTitle(title as string)
 })
 
-const id = sourcePath.split('/').pop()
+const id = $computed(() => sourcePath.split('/').pop())
 
 // 动态导入的变量仅代表一层深的文件名 参见 https://cn.vitejs.dev/guide/features.html#dynamic-import
 const source = asyncComputed(() => import(`../pages/example/${id}.vue?raw`).then(({ default: source }) => source ?? ''))
@@ -50,10 +50,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
             </h2>
             <div class="border-b border-gray-3 dark:border-gray-6" />
           </div>
-          <div
-            class="example-showcase overflow-y-auto p-6"
-            :style="{ 'max-height': 'calc(100vh - 160px)' }"
-          >
+          <div class="example-showcase overflow-y-auto p-6" :style="{ 'max-height': 'calc(100vh - 160px)' }">
             <Transition name="page-fade">
               <Component :is="demo" v-if="demo && reloadFlag" v-bind="$attrs" :key="title" />
             </Transition>
@@ -99,5 +96,4 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
 </template>
 
 <style>
-
 </style>
