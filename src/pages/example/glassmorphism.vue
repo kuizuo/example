@@ -24,14 +24,14 @@
   background-size: 100% 100%;
 }
 
-html.dark .background {
+.dark .background {
   background: url('/background-dark.png') no-repeat center;
   background-size: 100% 100%;
 }
 </style>
 
 <route lang="yaml">
-name: 毛玻璃卡片
+name: 玻璃态风格
 meta:
   layout: demo
 </route>

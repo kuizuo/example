@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 flex justify-center items-center gap-4 bg-[#ececec]">
+  <div class="p-4 flex justify-center items-center gap-8 bg-[#ececec]">
     <div class="input-box">
       <input class="input-check" type="checkbox">
       <i class="icon i-carbon-power" />
@@ -85,7 +85,7 @@
 </style>
 
 <route lang="yaml">
-name: 新拟态新拟物风格
+name: 新拟态风格
 meta:
   layout: demo
 </route>
