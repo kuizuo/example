@@ -11,7 +11,7 @@ useResizeObserver(document.body, (entries) => {
 </script>
 
 <template>
-  <aside w-250px max-h-screen flex-shrink-0 :style="{ width: !isHiddenSidebar ? '250px' : '0' }">
+  <aside w-200px max-h-screen flex-shrink-0 :style="{ width: !isHiddenSidebar ? '200px' : '0' }">
     <ul flex="~ col" h-screen overflow-y-scroll :class="{ '!overflow-hidden': isHiddenSidebar }">
       <li v-for="(item, i) in examples" :key="i">
         <RouterLink
