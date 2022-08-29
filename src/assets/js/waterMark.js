@@ -1,14 +1,14 @@
 const defaultSettings = {
   watermark_txt: 'text',
-  watermark_x: 20, // 水印起始位置x轴坐标
-  watermark_y: 20, // 水印起始位置Y轴坐标
-  watermark_rows: 20, // 水印行数
-  watermark_cols: 20, // 水印列数
+  watermark_x: 24, // 水印起始位置x轴坐标
+  watermark_y: 24, // 水印起始位置Y轴坐标
+  watermark_rows: 24, // 水印行数
+  watermark_cols: 24, // 水印列数
   watermark_x_space: 200, // 水印x轴间隔
   watermark_y_space: 100, // 水印y轴间隔
   watermark_color: '#000000', // 水印字体颜色
   watermark_alpha: 0.1, // 水印透明度
-  watermark_fontsize: '12px', // 水印字体大小
+  watermark_fontsize: '1rem', // 水印字体大小
   watermark_font: '微软雅黑', // 水印字体
   watermark_width: 120, // 水印宽度
   watermark_height: 30, // 水印长度

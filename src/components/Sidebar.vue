@@ -12,8 +12,11 @@ useResizeObserver(document.body, (entries) => {
 
 <template>
   <aside w-200px max-h-screen flex-shrink-0 :style="{ width: !isHiddenSidebar ? '200px' : '0' }">
-    <ul flex="~ col" h-screen overflow-y-scroll :class="{ '!overflow-hidden': isHiddenSidebar }">
-      <li v-for="(item, i) in examples" :key="i">
+    <ul
+      flex="~ col" py-1 h-screen overflow-y-scroll
+      :class="{ '!overflow-hidden': isHiddenSidebar, 'opacity': isHiddenSidebar }"
+    >
+      <li v-for="(item, i) in examples" :key="i" ml-1>
         <RouterLink
           :to="{ path: item.path }" class="m-0.5" block px-2 py-2 rounded-2 text-center font-semibold truncate
           bg="gray-1 dark:gray-8" opacity-90 style="transition: all 0.2s ease-in-out"
