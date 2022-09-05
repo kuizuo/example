@@ -66,7 +66,7 @@ const [sourceVisible, toggleSourceVisible] = useToggle(false)
           </div>
 
           <CollapseTransition>
-            <SourceCode v-show="sourceVisible" :source="source" />
+            <SourceCode v-show="sourceVisible" :source="source" :source-path="sourcePath" />
           </CollapseTransition>
 
           <Transition>

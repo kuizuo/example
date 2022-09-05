@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="p-4 flex flex-nowrap w-full gap-8">
     <div class="weather-container weather-sunny animate-duration-1800">
@@ -426,9 +422,9 @@
 }
 </style>
 
-  <route lang="yaml">
+<route lang="yaml">
 name: 动态天气效果
 meta:
   layout: demo
-  </route>
+</route>
 
