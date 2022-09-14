@@ -12,6 +12,15 @@
       <div class="shape shape-3" />
     </div>
   </div>
+  <div mt-4>
+    <h3>更多 Loading 效果</h3>
+    <p mt-1>
+      <a href="https://github.com/tobiasahlin/SpinKit" target="_blank" text-cyan>SpinKit</a>
+    </p>
+    <p mt-1>
+      <a href="http://k21vin.gitee.io/front-end-data-visualization/#/native/pureCSS/loading" target="_blank" text-cyan>前端可视化</a>
+    </p>
+  </div>
 </template>
 
 <style lang="scss" scoped>
