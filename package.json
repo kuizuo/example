@@ -1,6 +1,19 @@
 {
+  "name": "web-example",
+  "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@7.6.0",
+  "packageManager": "pnpm@7.11.0",
+  "description": "前端示例代码库",
+  "author": {
+    "url": "https://kuizuo.cn",
+    "email": "hi@kuizuo.cn",
+    "name": "Kuizuo"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/kuizuo/example",
+    "type": "git"
+  },
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
