@@ -11,7 +11,7 @@ useResizeObserver(document.body, (entries) => {
 </script>
 
 <template>
-  <aside w-200px max-h-screen flex-shrink-0 :style="{ width: !isHiddenSidebar ? '200px' : '0' }">
+  <aside w-200px max-h-screen flex-shrink-0 :class="{ '!w-0': isHiddenSidebar } ">
     <ul
       flex="~ col" py-1 h-screen overflow-y-scroll
       :class="{ '!overflow-hidden': isHiddenSidebar, 'opacity': isHiddenSidebar }"

@@ -11,7 +11,7 @@
       <div i="ri-sun-line dark:ri-moon-line" />
     </button>
 
-    <button class="icon-btn mx-2 !outline-none" @click="toggleFullDisplay()">
+    <button class="icon-btn mx-2 !outline-none" title="切换显示" @click="toggleFullDisplay()">
       <div v-if="isFullDisplay" i-ri-airplay-line />
       <div v-if="!isFullDisplay" i-ri-window-2-line />
     </button>

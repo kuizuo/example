@@ -14,7 +14,7 @@ const examples = pages.filter(page => page?.meta?.layout === 'demo')
         transition shadow="md cyan-4/30" hover="text-cyan/80"
       >
         <RouterLink
-          :to="item.path" class="m-0.5" block px-2 py-3 rounded-2 text-lg text-center font-semibold truncate
+          :to="item.path" :data-example="item.name" class="m-0.5" block px-2 py-3 rounded-2 text-lg text-center font-semibold truncate
           bg="gray-1 dark:gray-8" opacity-90
         >
           {{ item.name }}
