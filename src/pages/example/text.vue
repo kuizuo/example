@@ -1,23 +1,32 @@
+<script lang="ts" setup>
+const { data } = await useFetch('https://api.kuizuo.cn/api/one', {
+  onFetchError(ctx) {
+    ctx.data = '这是打字机效果'
+    return ctx
+  },
+})
+</script>
+
 <template>
   <div flex flex-col gap-6>
     <div class="card">
       <span class="gradient-text">
-        不是巅峰时的信仰，而是黄昏时的追逐
+        {{ data }}
       </span>
     </div>
     <div class="card">
       <span class="hollow-text">
-        不是巅峰时的信仰，而是黄昏时的追逐
+        {{ data }}
       </span>
     </div>
     <div class="card">
       <span class="shadow-text">
-        不是巅峰时的信仰，而是黄昏时的追逐
+        {{ data }}
       </span>
     </div>
     <div class="card">
       <span class="glow-text">
-        不是巅峰时的信仰，而是黄昏时的追逐
+        {{ data }}
       </span>
     </div>
   </div>
