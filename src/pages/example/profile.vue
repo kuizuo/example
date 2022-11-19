@@ -10,8 +10,8 @@ let delta = $ref(300 - Math.random() * 100)
 let index = $ref(1)
 
 const toRotate = locale.value === 'en'
-  ? ['Code Enthusiasm', 'Web Developer', 'Code farmer']
-  : ['编程爱好者', 'Web 开发者', '码农']
+  ? ['Code Enthusiasm', 'Web Developer', 'Code farmer', 'Was a Reverser']
+  : ['编程爱好者', 'Web 开发者', '码农', '曾做过逆向']
 
 const period = 2000
 

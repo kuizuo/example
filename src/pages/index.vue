@@ -8,12 +8,10 @@ const examples = pages.filter(page => page?.meta?.layout === 'demo')
     <h2 font-bold text-3xl>
       前端示例代码库
     </h2>
-    <ul mt-8 grid="~ cols-2 md:cols-3 lg:cols-4" gap="x-6 y-8">
+    <ul mt-8 grid="~ cols-2 md:cols-3 lg:cols-4" gap="x-4 y-4 sm:x-6 sm:y-6">
       <li v-for="(item, i) in examples" :key="i">
-        <RouterLink :to="item.path" :data-example="item.name" class="exampleBtn">
-          <span>
-            {{ item.name }}
-          </span>
+        <RouterLink :to="item.path" :data-example="item.name" class="gradient-border font-sans font-500 block sm:text-xl py-3 px-6 cursor-pointer">
+          {{ item.name }}
         </RouterLink>
       </li>
     </ul>
@@ -21,47 +19,44 @@ const examples = pages.filter(page => page?.meta?.layout === 'demo')
 </template>
 
 <style scoped>
-.exampleBtn {
-  margin: 0 auto;
-  width: calc(100% - 2.75rem);
-  text-align: center;
+.gradient-border {
   position: relative;
-  border-radius: 6px;
-  display: block;
-  overflow: hidden;
-  padding: 3px;
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.exampleBtn:before {
+.dark .gradient-border {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.gradient-border:before {
+  background: linear-gradient(90deg, #e2e2e2 0%, #e2e2e2 25%, #00DC82 50%, #36E4DA 75%, #0047E1 100%);
+}
+
+.gradient-border:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
-  background-size: 50% 100%;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.5rem;
+  padding: 2px;
+  width: 100%;
+  background-size: 400% auto;
+  opacity: 0.5;
+  transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
-.exampleBtn span {
-  position: relative;
-  display: block;
-  border-radius: 3px;
-  opacity: 0.9;
-  backdrop-filter: blur(10px);
-  padding: 0.75rem;
-  --at-apply: 'truncate text-lg font-semibold bg-white dark:bg-gray-900';
-}
-
-.exampleBtn:focus:before,
-.exampleBtn:hover:before {
-  animation: rainbowSlide 1s linear infinite;
-}
-
-@keyframes rainbowSlide {
-  to {
-    transform: translateX(-50%)
-  }
+.gradient-border:focus:before,
+.gradient-border:hover:before {
+  background-position: -50% 0;
+  opacity: 1;
 }
 </style>
 
