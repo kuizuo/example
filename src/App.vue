@@ -6,10 +6,6 @@ useHead({
   title: '前端示例代码库',
   meta: [
     { name: 'description', content: '前端样式与组件示例' },
-    {
-      name: 'theme-color',
-      content: computed(() => isDark.value ? '#00aba9' : '#ffffff'),
-    },
   ],
   link: [
     {

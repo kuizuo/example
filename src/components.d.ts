@@ -17,5 +17,8 @@ declare module 'vue' {
     Showcase: typeof import('./components/Showcase.vue')['default']
     Sidebar: typeof import('./components/Sidebar.vue')['default']
     SourceCode: typeof import('./components/SourceCode.vue')['default']
+    TheFooter: typeof import('./components/TheFooter.vue')['default']
+    TheSidebar: typeof import('./components/TheSidebar.vue')['default']
+    THeSidebar: typeof import('./components/THeSidebar.vue')['default']
   }
 }

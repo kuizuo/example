@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import pages from '~pages'
+
 const examples = pages.filter(page => page?.meta?.layout === 'demo')
 
 useResizeObserver(document.body, (entries) => {
@@ -11,7 +12,7 @@ useResizeObserver(document.body, (entries) => {
 </script>
 
 <template>
-  <aside w-200px max-h-screen flex-shrink-0 :class="{ '!w-0': isHiddenSidebar } ">
+  <aside w-200px max-h-screen flex-shrink-0 transition-width duration-660 :class="{ '!w-0': isHiddenSidebar } ">
     <ul
       flex="~ col" py-1 h-screen overflow-y-scroll
       :class="{ '!overflow-hidden': isHiddenSidebar, 'opacity': isHiddenSidebar }"
@@ -28,9 +29,3 @@ useResizeObserver(document.body, (entries) => {
     </ul>
   </aside>
 </template>
-
-<style scoped>
-aside {
-  transition: width .66s cubic-bezier(0.66, 0, 0.01, 1);
-}
-</style>
