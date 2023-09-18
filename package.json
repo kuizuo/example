@@ -15,6 +15,9 @@
     "url": "https://github.com/kuizuo/example",
     "type": "git"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
