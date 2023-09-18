@@ -6,10 +6,11 @@ import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import VueMacros from 'unplugin-vue-macros/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import { VitePWA } from 'vite-plugin-pwa'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Inspect from 'vite-plugin-inspect'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
+import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
@@ -22,9 +23,12 @@ export default defineConfig({
   },
 
   plugins: [
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          include: [/\.vue$/, /\.md$/],
+        }),
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -41,14 +45,12 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
-        'vue/macros',
         '@vueuse/head',
         '@vueuse/core',
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
         'src/composables',
-        'src/store',
       ],
       vueTemplate: true,
     }),
@@ -94,8 +96,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'Example',
+        short_name: 'Example',
         theme_color: '#ffffff',
         icons: [
           {
@@ -118,16 +120,16 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
+    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
+      fullInstall: true,
       include: [path.resolve(__dirname, 'locales/**')],
     }),
 
-    // https://github.com/antfu/vite-plugin-inspect
-    // Visit http://localhost:3333/__inspect/ to see the inspector
-    Inspect(),
+    // https://github.com/webfansplz/vite-plugin-vue-devtools
+    VueDevTools(),
   ],
 
   // https://github.com/vitest-dev/vitest
@@ -143,9 +145,13 @@ export default defineConfig({
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    onFinished() { generateSitemap() },
+    crittersOptions: {
+      reduceInlineStyles: false,
+    },
+    onFinished() {
+      generateSitemap()
+    },
   },
-
   ssr: {
     // TODO: workaround until they support native ESM
     noExternal: ['workbox-window', /vue-i18n/],
