@@ -1,3 +1,6 @@
 {
-  "extends": "@kuizuo"
+  "extends": "@antfu",
+  "rules": {
+    "@typescript-eslint/no-namespace": "off"
+  }
 }

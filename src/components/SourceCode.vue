@@ -15,7 +15,7 @@ const props = defineProps<{
 
 const code = computed(() => props.source ?? '')
 
-const highlighter = () => {
+function highlighter() {
   return prism.highlight(code.value, {
     ...prism.languages.markup,
     ...prism.languages.javascript,

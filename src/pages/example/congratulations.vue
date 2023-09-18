@@ -32,4 +32,3 @@ name: 五彩纸屑
 meta:
   layout: demo
 </route>
-

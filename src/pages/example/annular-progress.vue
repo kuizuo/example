@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const customProgressColor = (percentage: number) => {
+function customProgressColor(percentage: number) {
   if (percentage < 30)
     return '#f53f3f'
 

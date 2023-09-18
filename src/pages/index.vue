@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import pages from '~pages'
+
 const examples = pages.filter(page => page?.meta?.layout === 'demo')
 </script>
 

@@ -4,8 +4,6 @@
 
 当然，你也可以将其当做自己的前端样式展示库。
 
-在线演示: [https://example.kuizuo.cn](https://example.kuizuo.cn/)
-
 所有演示代码均存放在 [src/pages/example](https://github.com/kuizuo/example/tree/main/src/pages/example) 下，均使用 [vue3 setup](https://cn.vuejs.org/api/sfc-script-setup.html#script-setup) 语法进行编写。
 
 ### 特点

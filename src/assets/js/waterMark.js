@@ -34,19 +34,19 @@ class WaterMark {
     const page_height = Math.max(document.body.scrollHeight, document.body.clientHeight)
 
     // 如果将水印列数设置为0，或水印列数设置过大，超过页面最大宽度，则重新计算水印列数和水印x轴间隔
-    if (this.settings.watermark_cols == 0
-      || (parseInt(this.settings.watermark_x
+    if (this.settings.watermark_cols === 0
+      || (Number.parseInt(this.settings.watermark_x
         + this.settings.watermark_width * this.settings.watermark_cols
         + this.settings.watermark_x_space * (this.settings.watermark_cols - 1))
         > page_width)) {
       this.settings.watermark_cols
-        = parseInt((page_width
+        = Number.parseInt((page_width
           - this.settings.watermark_x
           + this.settings.watermark_x_space)
           / (this.settings.watermark_width
             + this.settings.watermark_x_space))
       this.settings.watermark_x_space
-        = parseInt((page_width
+        = Number.parseInt((page_width
           - this.settings.watermark_x
           - this.settings.watermark_width
           * this.settings.watermark_cols)
@@ -54,17 +54,17 @@ class WaterMark {
     }
 
     // 如果将水印行数设置为0，或水印行数设置过大，超过页面最大长度，则重新计算水印行数和水印y轴间隔
-    if (this.settings.watermark_rows == 0
-      || (parseInt(this.settings.watermark_y
+    if (this.settings.watermark_rows === 0
+      || (Number.parseInt(this.settings.watermark_y
         + this.settings.watermark_height * this.settings.watermark_rows
         + this.settings.watermark_y_space * (this.settings.watermark_rows - 1))
         > page_height)) {
       this.settings.watermark_rows
-        = parseInt((this.settings.watermark_y_space
+        = Number.parseInt((this.settings.watermark_y_space
           + page_height - this.settings.watermark_y)
           / (this.settings.watermark_height + this.settings.watermark_y_space))
       this.settings.watermark_y_space
-        = parseInt((page_height
+        = Number.parseInt((page_height
           - this.settings.watermark_y
           - this.settings.watermark_height
           * this.settings.watermark_rows)

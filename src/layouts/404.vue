@@ -21,4 +21,3 @@ useHead({
     </div>
   </main>
 </template>
-

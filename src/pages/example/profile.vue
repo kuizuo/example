@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+
 const { t, locale } = useI18n()
 
 let loopNum = $ref(0)
@@ -15,7 +16,7 @@ const toRotate = locale.value === 'en'
 
 const period = 2000
 
-const tick = () => {
+function tick() {
   const i = loopNum % toRotate.length
   const fullText = toRotate[i]
   const updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)

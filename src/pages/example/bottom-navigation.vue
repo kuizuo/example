@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { x, y } = useWindowScroll()
+const { y } = useWindowScroll()
 
 let shown = $ref(false)
 watch(y, () => {
@@ -13,7 +13,7 @@ async function backToTop() {
 
 <template>
   <div>
-    <p v-for="i in 50" :key="i">
+    <p v-for="i in 30" :key="i">
       1
     </p>
 
@@ -21,22 +21,22 @@ async function backToTop() {
       <Transition name="page-fade">
         <div v-show="shown">
           <button class="box icon-btn mx-2" @click="backToTop()">
-            <div i="ri-arrow-up-line" />
+            <div i-ri:arrow-up-line />
           </button>
         </div>
       </Transition>
       <div class="box icon-btn mx-2 dropdown dropdown--hoverable">
-        <div i="ri-wechat-line" />
-        <img src="/img/wx.png" alt="" class="dropdown__menu">
+        <div i-ri:wechat-line />
+        <img src="/img/wx.png" alt="Wx" class="dropdown__menu">
       </div>
       <a
         class="box icon-btn mx-2" rel="noreferrer"
         href="https://wpa.qq.com/wpa_jump_page?v=3&amp;uin=911993023&amp;site=qq" target="_blank" title="QQ"
       >
-        <div i="ri-qq-line" />
+        <div i-ri:qq-line />
       </a>
-      <button class="box icon-btn mx-2 !outline-none" @click="toggleDark()">
-        <div i="ri-sun-line dark:ri-moon-line" />
+      <button class="box icon-btn mx-2 !outline-none" @click="toggleDark">
+        <div i-ri:sun-line dark:i-ri:moon-line />
       </button>
     </div>
   </div>
